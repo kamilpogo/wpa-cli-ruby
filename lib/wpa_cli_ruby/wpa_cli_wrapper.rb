@@ -2,9 +2,7 @@ module WpaCliRuby
   class WpaCliWrapper
     
     def execute(*args)
-      IO.popen(["wpa_cli"] + args) do |io|
-        io.read
-      end
+      `sudo wpa_cli #{args.join(' ')}`
     end
     
     def self.available?
