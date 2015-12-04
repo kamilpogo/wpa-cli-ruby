@@ -141,13 +141,13 @@ module WpaCliRuby
     private
     def parse_interface_status_response(response)
       status = response.split("\n")
-      interface = wrapper.interface
+      interface = @wrapper.interface
       Response.new(interface, status)
     end
 
     def parse_status_response(response)
       *status = response.split("\n")
-      interface = wrapper.interface
+      interface = @wrapper.interface
       status_items = Hash[status.map{|s| s.split("=")}]
       StatusResponse.new(interface, status_items)
     end
