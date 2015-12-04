@@ -140,7 +140,7 @@ module WpaCliRuby
 
     private
     def parse_interface_status_response(response)
-      status = response.split("\n")
+      status = response.split("\n")[0]
       interface = @wrapper.interface
       Response.new(interface, status)
     end
