@@ -1,5 +1,6 @@
 module WpaCliRuby
   class WpaCliWrapper
+    attr_accessor :interface
     
     def initialize(interface = 'wlan0')
       @interface = interface
