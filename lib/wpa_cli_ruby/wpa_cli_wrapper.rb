@@ -1,8 +1,12 @@
 module WpaCliRuby
   class WpaCliWrapper
     
+    def initialize(interface = 'wlan0')
+      @interface = interface
+    end
+    
     def execute(*args)
-      `sudo wpa_cli #{args.join(' ')}`
+      `sudo wpa_cli -i #{@interface} #{args.join(' ')}`
     end
     
     def self.available?
