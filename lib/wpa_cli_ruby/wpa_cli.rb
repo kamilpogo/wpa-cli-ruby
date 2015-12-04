@@ -61,7 +61,8 @@ module WpaCliRuby
     end
 
     def initialize(interface = 'wlan0', wrapper = WpaCliWrapper.new)
-      @wrapper = wrapper interface
+      wrapper.interface = interface
+      @wrapper = wrapper
     end
 
     def scan
