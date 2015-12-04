@@ -54,5 +54,8 @@ module WpaCliRuby
       execute("ap_scan", val.to_s)
     end
 
+    def reconfigure
+      execute("reconfigure")
+    end
   end
 end
