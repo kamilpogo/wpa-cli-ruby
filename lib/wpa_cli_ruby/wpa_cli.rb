@@ -58,6 +58,14 @@ module WpaCliRuby
                 # lookup.
         end
       end
+      
+      def respond_to?(meth)
+        if not @items[meth.to_s].nil?
+          true
+        else
+          super
+        end
+      end
     end
 
     def initialize(interface = 'wlan0', wrapper = WpaCliWrapper.new)
