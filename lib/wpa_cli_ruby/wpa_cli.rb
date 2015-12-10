@@ -80,13 +80,15 @@ module WpaCliRuby
 
     def scan_results
       response = @wrapper.scan_results
-      interface, header, *results = response.split("\n")
+      interface = @wrapper.interface
+      header, *results = response.split("\n")
       results.map { |result| ScanResult.from_string(result) }
     end
 
     def list_networks
       response = @wrapper.list_networks
-      interface, header, *results = response.split("\n")
+      interface = @wrapper.interface
+      header, *results = response.split("\n")
       results.map { |result| ListNetworkResult.from_string(result) }
     end
 
